@@ -388,6 +388,20 @@
         // Event listener for Set Reminder button
         setReminderBtn.addEventListener('click', () => {
             if (calculatedDeliveryDate && selectedAnimalName) {
+                // Get today's date, normalized to midnight for comparison
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                // Get calculated delivery date, normalized to midnight for comparison
+                const delivery = new Date(calculatedDeliveryDate);
+                delivery.setHours(0, 0, 0, 0);
+
+                // Check if delivery date is in the past
+                if (delivery < today) {
+                    showModal('Cannot Set Reminder', 'The calculated delivery date is in the past. Reminders can only be set for future dates.');
+                    return; // Stop the function if date is in the past
+                }
+
                 let reminders = JSON.parse(localStorage.getItem('animalDeliveryReminders') || '[]');
 
                 // Check for duplicates before adding
