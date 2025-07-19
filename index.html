@@ -13,8 +13,9 @@
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6; /* Light gray background */
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align to start to prevent content from being too high */
+            flex-direction: column; /* Allow content and footer to stack */
+            justify-content: space-between; /* Push footer to the bottom */
+            align-items: center;
             min-height: 100vh;
             padding: 2rem 1rem; /* Add padding for mobile view */
             box-sizing: border-box;
@@ -27,6 +28,7 @@
             max-width: 500px;
             width: 100%;
             box-sizing: border-box;
+            margin-bottom: 2rem; /* Space between content and footer */
         }
         .input-group label {
             display: block;
@@ -149,6 +151,30 @@
         .modal-close-button:hover {
             color: #1f2937;
         }
+        .footer {
+            margin-top: auto; /* Pushes the footer to the bottom */
+            text-align: center;
+            padding: 1rem 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        .footer .donation-info {
+            background-color: #f0fdf4; /* Light green background for donation info */
+            border: 1px solid #a7f3d0; /* Green border */
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1rem;
+            display: inline-block; /* To make it wrap content */
+            text-align: left; /* Align text inside to left */
+        }
+        .footer .donation-info p {
+            margin-bottom: 0.5rem;
+            color: #065f46; /* Darker green text */
+            font-weight: 500;
+        }
+        .footer .donation-info strong {
+            color: #047857; /* Even darker green for strong text */
+        }
     </style>
 </head>
 <body>
@@ -193,6 +219,19 @@
             <button id="clear-all-reminders-btn" class="mt-6 bg-red-500 hover:bg-red-600 hidden">Clear All Reminders</button>
         </div>
     </div>
+
+    <!-- Footer with Donation Details -->
+    <footer class="footer">
+        <p>Enjoying this tool? Your support helps us cover development and hosting costs!</p>
+        <div class="donation-info">
+            <p><strong>Bank Name:</strong> Opay</p>
+            <p><strong>Account Name:</strong> Smallbyte Multivenures</p>
+            <p><strong>Account Number:</strong>6102500271</p>
+            <!-- Add other payment details if needed, e.g., mobile money -->
+            <p class="mt-2 text-xs text-gray-600">Thank you for your generosity!</p>
+        </div>
+        <!-- IMPORTANT: Replace the placeholder details above with your actual bank information! -->
+    </footer>
 
     <!-- Reminder Modal -->
     <div id="reminder-modal-overlay" class="modal-overlay">
