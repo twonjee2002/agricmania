@@ -7,110 +7,149 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
+            background-color: #f0f4f8; /* Softer light blue-gray background */
             display: flex;
-            flex-direction: column; /* Allow content and footer to stack */
-            justify-content: space-between; /* Push footer to the bottom */
+            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
             min-height: 100vh;
-            padding: 2rem 1rem; /* Add padding for mobile view */
+            padding: 2.5rem 1.5rem; /* Increased padding */
             box-sizing: border-box;
         }
         .container {
             background-color: #ffffff;
-            padding: 2.5rem;
-            border-radius: 1.5rem; /* More rounded corners */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
-            max-width: 500px;
+            padding: 3rem; /* More generous padding */
+            border-radius: 1.75rem; /* Even more rounded corners */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Stronger, more refined shadow */
+            max-width: 550px; /* Slightly wider container */
             width: 100%;
             box-sizing: border-box;
-            margin-bottom: 2rem; /* Space between content and footer */
+            margin-bottom: 2.5rem; /* More space before footer */
+            border: 1px solid #e2e8f0; /* Subtle border */
+        }
+        h1 {
+            background: linear-gradient(to right, #6366f1, #8b5cf6); /* Indigo to Violet gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800; /* Extra bold */
+            font-size: 2.5rem; /* Larger title */
+            margin-bottom: 2.5rem; /* More space below title */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle text shadow */
         }
         .input-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #374151; /* Darker gray for labels */
+            margin-bottom: 0.6rem; /* Slightly more space */
+            font-weight: 700; /* Bolder labels */
+            color: #2d3748; /* Darker gray for labels */
+            font-size: 1.05rem;
         }
         .input-group select,
         .input-group input[type="date"] {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #d1d5db; /* Light gray border */
-            border-radius: 0.75rem; /* Rounded input fields */
-            font-size: 1rem;
-            color: #4b5563; /* Medium gray text */
-            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            padding: 0.9rem; /* More padding */
+            border: 2px solid #cbd5e0; /* Slightly thicker, softer border */
+            border-radius: 1rem; /* More rounded input fields */
+            font-size: 1.05rem;
+            color: #4a5568;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #f8fafc; /* Very light background for inputs */
         }
         .input-group select:focus,
         .input-group input[type="date"]:focus {
             outline: none;
-            border-color: #6366f1; /* Indigo on focus */
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); /* Light indigo glow */
+            border-color: #7c3aed; /* Deeper purple on focus */
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.25); /* More pronounced glow */
+            background-color: #ffffff;
         }
         button {
             width: 100%;
-            padding: 0.75rem 1.5rem;
-            background-color: #6366f1; /* Indigo button */
+            padding: 0.9rem 1.8rem; /* More padding */
+            background-color: #6366f1; /* Primary indigo button */
             color: white;
             border: none;
-            border-radius: 0.75rem;
-            font-size: 1.125rem; /* Larger font for button */
-            font-weight: 600;
+            border-radius: 1rem; /* More rounded buttons */
+            font-size: 1.2rem; /* Larger font for button */
+            font-weight: 700; /* Bolder button text */
             cursor: pointer;
-            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            transition: background-color 0.3s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3); /* Button shadow */
         }
         button:hover {
-            background-color: #4f46e5; /* Darker indigo on hover */
-            transform: translateY(-1px); /* Slight lift effect */
+            background-color: #5a5fe0; /* Slightly darker indigo on hover */
+            transform: translateY(-2px); /* More noticeable lift effect */
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
         }
         button:active {
             transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(99, 102, 241, 0.2);
         }
+        /* Specific button colors */
+        #set-reminder-btn {
+            background-color: #10b981; /* Emerald green for Set Reminder */
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+        #set-reminder-btn:hover {
+            background-color: #059669;
+            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
+        }
+        #clear-all-reminders-btn {
+            background-color: #ef4444; /* Red for Clear All */
+            box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+        }
+        #clear-all-reminders-btn:hover {
+            background-color: #dc2626;
+            box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
+        }
+        .reminder-item button { /* Delete button within reminder item */
+            background-color: #f43f5e; /* Rose red */
+            box-shadow: none; /* No shadow for small buttons */
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border-radius: 0.75rem;
+        }
+        .reminder-item button:hover {
+            background-color: #e11d48;
+            transform: translateY(-1px);
+        }
+
         .result-box {
-            background-color: #e0f2fe; /* Light blue for results */
-            padding: 1.5rem;
-            border-radius: 1rem;
-            border: 1px solid #90cdf4; /* Blue border */
-            color: #1e40af; /* Dark blue text */
-            font-size: 1.1rem;
-            font-weight: 500;
+            background-color: #ecfdf5; /* Very light green for results */
+            padding: 1.8rem; /* More padding */
+            border-radius: 1.25rem; /* More rounded */
+            border: 1px solid #a7f3d0; /* Green border */
+            color: #065f46; /* Dark green text */
+            font-size: 1.2rem; /* Larger font */
+            font-weight: 600;
             text-align: center;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.1); /* Subtle green shadow */
         }
         .reminder-item {
-            background-color: #f0f9ff; /* Very light blue for reminder items */
-            padding: 1rem;
-            border-radius: 0.75rem;
+            background-color: #f0f9ff; /* Lightest blue for reminder items */
+            padding: 1.2rem; /* More padding */
+            border-radius: 1rem;
             border: 1px solid #bfdbfe; /* Lighter blue border */
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.9rem; /* More space */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #374151;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow for items */
         }
-        .reminder-item button {
-            width: auto;
-            padding: 0.4rem 0.8rem;
-            font-size: 0.85rem;
-            background-color: #ef4444; /* Red for delete button */
-            border-radius: 0.5rem;
+        .reminder-item strong {
+            color: #1d4ed8; /* Darker blue for animal name */
         }
-        .reminder-item button:hover {
-            background-color: #dc2626; /* Darker red on hover */
-        }
-        /* Modal styles */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6); /* Darker overlay */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -125,55 +164,74 @@
         }
         .modal-content {
             background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            max-width: 400px;
+            padding: 2.5rem; /* More padding */
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Stronger modal shadow */
+            max-width: 450px; /* Slightly wider modal */
             width: 90%;
             text-align: center;
             position: relative;
-            transform: translateY(-20px);
+            transform: translateY(-30px); /* More noticeable slide-in */
             transition: transform 0.3s ease-in-out;
+            border: 1px solid #e2e8f0;
         }
         .modal-overlay.show .modal-content {
             transform: translateY(0);
         }
         .modal-close-button {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
+            top: 1.2rem;
+            right: 1.2rem;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Larger close button */
             cursor: pointer;
-            color: #6b7280;
+            color: #94a3b8; /* Softer gray */
+            transition: color 0.2s ease-in-out;
         }
         .modal-close-button:hover {
-            color: #1f2937;
+            color: #475569; /* Darker on hover */
+        }
+        #modal-ok-btn {
+            background-color: #4f46e5; /* Consistent indigo for modal OK */
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+        }
+        #modal-ok-btn:hover {
+            background-color: #4338ca;
+            box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
         }
         .footer {
-            margin-top: auto; /* Pushes the footer to the bottom */
+            margin-top: auto;
             text-align: center;
-            padding: 1rem 0;
-            color: #6b7280;
-            font-size: 0.9rem;
+            padding: 1.5rem 0; /* More padding */
+            color: #64748b; /* Softer gray */
+            font-size: 0.95rem; /* Slightly larger font */
+            width: 100%; /* Ensure footer spans full width */
         }
         .footer .donation-info {
-            background-color: #f0fdf4; /* Light green background for donation info */
-            border: 1px solid #a7f3d0; /* Green border */
-            padding: 1rem;
-            border-radius: 0.75rem;
-            margin-top: 1rem;
-            display: inline-block; /* To make it wrap content */
-            text-align: left; /* Align text inside to left */
+            background-color: #fffbeb; /* Light yellow background for donation info */
+            border: 1px solid #fcd34d; /* Yellow border */
+            padding: 1.5rem; /* More padding */
+            border-radius: 1rem;
+            margin-top: 1.5rem; /* More space */
+            display: inline-block;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(252, 211, 77, 0.2); /* Subtle yellow shadow */
         }
         .footer .donation-info p {
-            margin-bottom: 0.5rem;
-            color: #065f46; /* Darker green text */
-            font-weight: 500;
+            margin-bottom: 0.6rem; /* More space */
+            color: #92400e; /* Darker brown/orange text */
+            font-weight: 600;
         }
         .footer .donation-info strong {
-            color: #047857; /* Even darker green for strong text */
+            color: #b45309; /* Even darker for strong text */
+        }
+        .footer .donation-info .mt-2 {
+            margin-top: 0.8rem;
+        }
+        .footer .donation-info .text-xs {
+            font-size: 0.85rem; /* Slightly larger thank you text */
+            color: #78716c;
         }
     </style>
 </head>
@@ -206,7 +264,7 @@
 
         <div id="result-display" class="result-box hidden mb-6">
             <p><span class="font-bold">Estimated Delivery Date:</span> <span id="delivery-date-output"></span></p>
-            <button id="set-reminder-btn" class="mt-4 bg-green-500 hover:bg-green-600">Set Reminder</button>
+            <button id="set-reminder-btn" class="mt-4">Set Reminder</button>
         </div>
 
         <div id="reminders-list-container" class="mt-8">
@@ -216,7 +274,7 @@
                 <!-- Reminders will be loaded here -->
                 <p id="no-reminders-msg" class="text-gray-500 text-center">No reminders set yet.</p>
             </div>
-            <button id="clear-all-reminders-btn" class="mt-6 bg-red-500 hover:bg-red-600 hidden">Clear All Reminders</button>
+            <button id="clear-all-reminders-btn" class="mt-6 hidden">Clear All Reminders</button>
         </div>
     </div>
 
@@ -224,9 +282,9 @@
     <footer class="footer">
         <p>Enjoying this tool? Your support helps us cover development and hosting costs!</p>
         <div class="donation-info">
-            <p><strong>Bank Name:</strong> Opay</p>
-            <p><strong>Account Name:</strong> Smallbyte Multivenures</p>
-            <p><strong>Account Number:</strong>6102500271</p>
+            <p><strong>Bank Name:</strong> [Your Bank Name Here]</p>
+            <p><strong>Account Name:</strong> [Your Account Name Here]</p>
+            <p><strong>Account Number:</strong> [Your Account Number Here]</p>
             <!-- Add other payment details if needed, e.g., mobile money -->
             <p class="mt-2 text-xs text-gray-600">Thank you for your generosity!</p>
         </div>
